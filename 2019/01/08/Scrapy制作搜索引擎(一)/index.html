@@ -7,15 +7,18 @@
   
   <title>Scrapy制作搜索引擎(一) | Bmsherry Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="python">
+  <meta name="description" content="环境搭建1.pycharm的安装 下载专业版（http://www.jetbrains.com/pycharm/）2.安装mysql和navicat3.安装python3（windows下需配置python路径以及pip路径）4.安装虚拟环境    安装virtualenv    pip install virtualenv    安装virtualenvwrapper    pip instal">
+<meta name="keywords" content="python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Scrapy制作搜索引擎(一)">
 <meta property="og:url" content="http://yoursite.com/2019/01/08/Scrapy制作搜索引擎(一)/index.html">
 <meta property="og:site_name" content="Bmsherry Blog">
+<meta property="og:description" content="环境搭建1.pycharm的安装 下载专业版（http://www.jetbrains.com/pycharm/）2.安装mysql和navicat3.安装python3（windows下需配置python路径以及pip路径）4.安装虚拟环境    安装virtualenv    pip install virtualenv    安装virtualenvwrapper    pip instal">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-08T01:56:16.379Z">
+<meta property="og:updated_time" content="2019-01-08T03:19:09.789Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Scrapy制作搜索引擎(一)">
+<meta name="twitter:description" content="环境搭建1.pycharm的安装 下载专业版（http://www.jetbrains.com/pycharm/）2.安装mysql和navicat3.安装python3（windows下需配置python路径以及pip路径）4.安装虚拟环境    安装virtualenv    pip install virtualenv    安装virtualenvwrapper    pip instal">
   
     <link rel="alternate" href="/atom.xml" title="Bmsherry Blog" type="application/atom+xml">
   
@@ -88,11 +91,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><p>1.pycharm的安装 下载专业版（<a href="http://www.jetbrains.com/pycharm/）" target="_blank" rel="noopener">http://www.jetbrains.com/pycharm/）</a><br>2.安装mysql和navicat<br>3.安装python3（<strong>windows下需配置python路径以及pip路径</strong>）<br>4.安装虚拟环境<br>    <strong>安装virtualenv</strong><br>    <code>pip install virtualenv</code><br>    <strong>安装virtualenvwrapper</strong><br>    <code>pip install virtualenvwrapper-win</code><br>    <strong>修改虚拟环境地址</strong><br>    windows环境变量中加入WORKON_HOME 为自己创建的Envs文件夹地址<br>    <strong>新建虚拟环境</strong><br>    <code>mkvirtualenv --python=&quot;需要的python版本路径&quot; envName</code>(环境名)   (<strong>若使用自带版本，则不需要加python参数</strong>)<br>    <strong>查看虚拟环境</strong><br>    <code>workon</code><br>    <strong>进入虚拟环境</strong><br>    <code>workon envName</code>(环境名)<br>    <strong>退出虚拟环境</strong><br>    <code>deactivate</code></p>
+<h2 id="使用虚拟环境创建项目"><a href="#使用虚拟环境创建项目" class="headerlink" title="使用虚拟环境创建项目"></a>使用虚拟环境创建项目</h2><pre><code>打开pycharm 点击File-&gt;new Project-&gt;Pure Python
+选择 Existing interpreter 选择Envs地址下的需要使用的虚拟环境envName下的Scripts下的python.exe
+修改最上方location(项目地址)为创建项目的地址,点击创建（create）即可
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/08/Scrapy制作搜索引擎(一)/" data-id="cjqn5jghh0000ngby807itm2e" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/08/Scrapy制作搜索引擎(一)/" data-id="cjqn6t1ew00004wbya4wd5syt" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
