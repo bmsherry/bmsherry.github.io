@@ -5,19 +5,22 @@
   
 
   
-  <title>Bmsherry的博客</title>
+  <title>Scrapy制作搜索引擎（二） | Bmsherry的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一个自己学习code的博客">
-<meta name="keywords" content="blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Bmsherry的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="广度优先和深度优先网站一般为以下结构,节点往往比二叉树要多,以二叉树为例 深度优先1234567def depth_tree(tree_node):    if tree_node is not None :        print (tree_node._data)        if tree_node._left is not None :            return depth_">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Scrapy制作搜索引擎（二）">
+<meta property="og:url" content="http://yoursite.com/2019/01/08/Scrapy制作搜索引擎（二）/index.html">
 <meta property="og:site_name" content="Bmsherry的博客">
-<meta property="og:description" content="一个自己学习code的博客">
+<meta property="og:description" content="广度优先和深度优先网站一般为以下结构,节点往往比二叉树要多,以二叉树为例 深度优先1234567def depth_tree(tree_node):    if tree_node is not None :        print (tree_node._data)        if tree_node._left is not None :            return depth_">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1546937560911&di=91484d11775168f46c6a25ba49d4422b&imgtype=0&src=http%3A%2F%2Fpic.baike.soso.com%2Fp%2F20131206%2F20131206141926-1092881236.jpg">
+<meta property="og:updated_time" content="2019-01-08T07:06:20.575Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Bmsherry的博客">
-<meta name="twitter:description" content="一个自己学习code的博客">
+<meta name="twitter:title" content="Scrapy制作搜索引擎（二）">
+<meta name="twitter:description" content="广度优先和深度优先网站一般为以下结构,节点往往比二叉树要多,以二叉树为例 深度优先1234567def depth_tree(tree_node):    if tree_node is not None :        print (tree_node._data)        if tree_node._left is not None :            return depth_">
+<meta name="twitter:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1546937560911&di=91484d11775168f46c6a25ba49d4422b&imgtype=0&src=http%3A%2F%2Fpic.baike.soso.com%2Fp%2F20131206%2F20131206141926-1092881236.jpg">
   
     <link rel="alternate" href="/atom.xml" title="Bmsherry的博客" type="application/atom+xml">
   
@@ -64,58 +67,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-Scrapy制作搜索引擎（三）" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/01/08/Scrapy制作搜索引擎（三）/" class="article-date">
-  <time datetime="2019-01-08T06:28:11.000Z" itemprop="datePublished">2019-01-08</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/python/">python</a>►<a class="article-category-link" href="/categories/python/scrapy/">scrapy</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/08/Scrapy制作搜索引擎（三）/">Scrapy制作搜索引擎（三）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="爬虫去重策略"><a href="#爬虫去重策略" class="headerlink" title="爬虫去重策略"></a>爬虫去重策略</h1><ol>
-<li>将访问过的url保存到数据库中</li>
-<li>将访问过的url保存在set中，只需要<strong>O(1)</strong>的代价就可以查询url</li>
-<li>url经过md5等方法哈希保存到set中 (<strong>scrapy使用</strong>)</li>
-<li>用bitmap方法，将访问过的url通过hash函数映射到某一位</li>
-<li>bloomfilter方法对bitmap进行改进，多重hash函数降低冲突</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/08/Scrapy制作搜索引擎（三）/" data-id="cjqnf8zkn00074kbyxe0t314f" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Scrapy制作搜索引擎（二）" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <section id="main"><article id="post-Scrapy制作搜索引擎（二）" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/01/08/Scrapy制作搜索引擎（二）/" class="article-date">
   <time datetime="2019-01-08T05:46:22.000Z" itemprop="datePublished">2019-01-08</time>
@@ -132,8 +84,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/08/Scrapy制作搜索引擎（二）/">Scrapy制作搜索引擎（二）</a>
+    <h1 class="article-title" itemprop="name">
+      Scrapy制作搜索引擎（二）
     </h1>
   
 
@@ -158,62 +110,28 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-Scrapy制作搜索引擎（一）" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/01/08/Scrapy制作搜索引擎（一）/" class="article-date">
-  <time datetime="2019-01-08T01:47:46.000Z" itemprop="datePublished">2019-01-08</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/python/">python</a>►<a class="article-category-link" href="/categories/python/scrapy/">scrapy</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <a href="/2019/01/08/Scrapy制作搜索引擎（三）/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
         
+          Scrapy制作搜索引擎（三）
+        
+      </div>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/08/Scrapy制作搜索引擎（一）/">Scrapy制作搜索引擎（一）</a>
-    </h1>
   
+    <a href="/2019/01/08/Scrapy制作搜索引擎（一）/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Scrapy制作搜索引擎（一）</div>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h1><ol>
-<li>pycharm 的安装 下载专业版（<a href="http://www.jetbrains.com/pycharm/）" target="_blank" rel="noopener">http://www.jetbrains.com/pycharm/）</a> </li>
-<li>安装 mysql 和 navicat </li>
-<li>安装 python3（<strong>windows 下需配置 python 路径以及 pip 路径</strong>） </li>
-<li>安装虚拟环境<br><strong>安装 virtualenv</strong><br><code>pip install virtualenv</code><br><strong>安装 virtualenvwrapper</strong><br><code>pip install virtualenvwrapper-win</code><br><strong>修改虚拟环境地址</strong><br>windows 环境变量中加入 WORKON_HOME 为自己创建的 Envs 文件夹地址<br><strong>新建虚拟环境</strong><br><code>mkvirtualenv --python=&quot;需要的python版本路径&quot; envName</code>(环境名) (<strong>若使用自带版本，则不需要加 python 参数</strong>)<br><strong>查看虚拟环境</strong><br><code>workon</code><br><strong>进入虚拟环境</strong><br><code>workon envName</code>(环境名)<br><strong>退出虚拟环境</strong><br><code>deactivate</code></li>
-</ol>
-<h1 id="使用虚拟环境创建项目"><a href="#使用虚拟环境创建项目" class="headerlink" title="使用虚拟环境创建项目"></a>使用虚拟环境创建项目</h1><pre><code>打开pycharm 点击File-&gt;new Project-&gt;Pure Python
-选择 Existing interpreter 选择Envs地址下的需要使用的虚拟环境envName下的Scripts下的python.exe
-修改最上方location(项目地址)为创建项目的地址,点击创建（create）即可
-</code></pre>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/08/Scrapy制作搜索引擎（一）/" data-id="cjqnf8zk100004kbykcsp01ch" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
-
-
-  
-
 
 </section>
         

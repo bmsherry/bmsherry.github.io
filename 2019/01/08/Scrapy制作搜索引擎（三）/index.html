@@ -5,19 +5,20 @@
   
 
   
-  <title>Tag: python | Bmsherry的博客</title>
+  <title>Scrapy制作搜索引擎（三） | Bmsherry的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一个自己学习code的博客">
-<meta name="keywords" content="blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Bmsherry的博客">
-<meta property="og:url" content="http://yoursite.com/tags/python/index.html">
+  <meta name="description" content="爬虫去重策略 将访问过的url保存到数据库中 将访问过的url保存在set中，只需要O(1)的代价就可以查询url url经过md5等方法哈希保存到set中 (scrapy使用) 用bitmap方法，将访问过的url通过hash函数映射到某一位 bloomfilter方法对bitmap进行改进，多重hash函数降低冲突">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Scrapy制作搜索引擎（三）">
+<meta property="og:url" content="http://yoursite.com/2019/01/08/Scrapy制作搜索引擎（三）/index.html">
 <meta property="og:site_name" content="Bmsherry的博客">
-<meta property="og:description" content="一个自己学习code的博客">
+<meta property="og:description" content="爬虫去重策略 将访问过的url保存到数据库中 将访问过的url保存在set中，只需要O(1)的代价就可以查询url url经过md5等方法哈希保存到set中 (scrapy使用) 用bitmap方法，将访问过的url通过hash函数映射到某一位 bloomfilter方法对bitmap进行改进，多重hash函数降低冲突">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-01-08T07:05:53.170Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Bmsherry的博客">
-<meta name="twitter:description" content="一个自己学习code的博客">
+<meta name="twitter:title" content="Scrapy制作搜索引擎（三）">
+<meta name="twitter:description" content="爬虫去重策略 将访问过的url保存到数据库中 将访问过的url保存在set中，只需要O(1)的代价就可以查询url url经过md5等方法哈希保存到set中 (scrapy使用) 用bitmap方法，将访问过的url通过hash函数映射到某一位 bloomfilter方法对bitmap进行改进，多重hash函数降低冲突">
   
     <link rel="alternate" href="/atom.xml" title="Bmsherry的博客" type="application/atom+xml">
   
@@ -64,78 +65,64 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/01/08/Scrapy制作搜索引擎（三）/" class="archive-article-date">
-  <time datetime="2019-01-08T06:28:11.000Z" itemprop="datePublished">1月 8</time>
+        <section id="main"><article id="post-Scrapy制作搜索引擎（三）" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/08/Scrapy制作搜索引擎（三）/" class="article-date">
+  <time datetime="2019-01-08T06:28:11.000Z" itemprop="datePublished">2019-01-08</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python/">python</a>►<a class="article-category-link" href="/categories/python/scrapy/">scrapy</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/08/Scrapy制作搜索引擎（三）/">Scrapy制作搜索引擎（三）</a>
+    <h1 class="article-title" itemprop="name">
+      Scrapy制作搜索引擎（三）
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/01/08/Scrapy制作搜索引擎（二）/" class="archive-article-date">
-  <time datetime="2019-01-08T05:46:22.000Z" itemprop="datePublished">1月 8</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/08/Scrapy制作搜索引擎（二）/">Scrapy制作搜索引擎（二）</a>
-    </h1>
-  
+        <h1 id="爬虫去重策略"><a href="#爬虫去重策略" class="headerlink" title="爬虫去重策略"></a>爬虫去重策略</h1><ol>
+<li>将访问过的url保存到数据库中</li>
+<li>将访问过的url保存在set中，只需要<strong>O(1)</strong>的代价就可以查询url</li>
+<li>url经过md5等方法哈希保存到set中 (<strong>scrapy使用</strong>)</li>
+<li>用bitmap方法，将访问过的url通过hash函数映射到某一位</li>
+<li>bloomfilter方法对bitmap进行改进，多重hash函数降低冲突</li>
+</ol>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/01/08/Scrapy制作搜索引擎（一）/" class="archive-article-date">
-  <time datetime="2019-01-08T01:47:46.000Z" itemprop="datePublished">1月 8</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/08/Scrapy制作搜索引擎（一）/">Scrapy制作搜索引擎（一）</a>
-    </h1>
-  
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/01/08/Scrapy制作搜索引擎（三）/" data-id="cjqnf8zkn00074kbyxe0t314f" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
 
-    </header>
+    </footer>
   </div>
-</article>
+  
+    
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/01/08/Scrapy制作搜索引擎（二）/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Scrapy制作搜索引擎（二）</div>
+    </a>
   
+</nav>
 
+  
+</article>
 
 </section>
         

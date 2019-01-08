@@ -5,22 +5,22 @@
   
 
   
-  <title>Scrapy制作搜索引擎(一) | Bmsherry Blog</title>
+  <title>Scrapy制作搜索引擎（一） | Bmsherry的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="环境搭建1.pycharm的安装 下载专业版（http://www.jetbrains.com/pycharm/）2.安装mysql和navicat3.安装python3（windows下需配置python路径以及pip路径）4.安装虚拟环境    安装virtualenv    pip install virtualenv    安装virtualenvwrapper    pip instal">
+  <meta name="description" content="环境搭建 pycharm 的安装 下载专业版（http://www.jetbrains.com/pycharm/）  安装 mysql 和 navicat  安装 python3（windows 下需配置 python 路径以及 pip 路径）  安装虚拟环境安装 virtualenvpip install virtualenv安装 virtualenvwrapperpip install vir">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Scrapy制作搜索引擎(一)">
-<meta property="og:url" content="http://yoursite.com/2019/01/08/Scrapy制作搜索引擎(一)/index.html">
-<meta property="og:site_name" content="Bmsherry Blog">
-<meta property="og:description" content="环境搭建1.pycharm的安装 下载专业版（http://www.jetbrains.com/pycharm/）2.安装mysql和navicat3.安装python3（windows下需配置python路径以及pip路径）4.安装虚拟环境    安装virtualenv    pip install virtualenv    安装virtualenvwrapper    pip instal">
+<meta property="og:title" content="Scrapy制作搜索引擎（一）">
+<meta property="og:url" content="http://yoursite.com/2019/01/08/Scrapy制作搜索引擎（一）/index.html">
+<meta property="og:site_name" content="Bmsherry的博客">
+<meta property="og:description" content="环境搭建 pycharm 的安装 下载专业版（http://www.jetbrains.com/pycharm/）  安装 mysql 和 navicat  安装 python3（windows 下需配置 python 路径以及 pip 路径）  安装虚拟环境安装 virtualenvpip install virtualenv安装 virtualenvwrapperpip install vir">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-08T03:23:36.687Z">
+<meta property="og:updated_time" content="2019-01-08T07:05:47.515Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Scrapy制作搜索引擎(一)">
-<meta name="twitter:description" content="环境搭建1.pycharm的安装 下载专业版（http://www.jetbrains.com/pycharm/）2.安装mysql和navicat3.安装python3（windows下需配置python路径以及pip路径）4.安装虚拟环境    安装virtualenv    pip install virtualenv    安装virtualenvwrapper    pip instal">
+<meta name="twitter:title" content="Scrapy制作搜索引擎（一）">
+<meta name="twitter:description" content="环境搭建 pycharm 的安装 下载专业版（http://www.jetbrains.com/pycharm/）  安装 mysql 和 navicat  安装 python3（windows 下需配置 python 路径以及 pip 路径）  安装虚拟环境安装 virtualenvpip install virtualenv安装 virtualenvwrapperpip install vir">
   
-    <link rel="alternate" href="/atom.xml" title="Bmsherry Blog" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="Bmsherry的博客" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -39,7 +39,7 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">Bmsherry Blog</a>
+        <a href="/" id="logo">Bmsherry的博客</a>
       </h1>
       
     </div>
@@ -65,9 +65,9 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Scrapy制作搜索引擎(一)" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <section id="main"><article id="post-Scrapy制作搜索引擎（一）" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/01/08/Scrapy制作搜索引擎(一)/" class="article-date">
+    <a href="/2019/01/08/Scrapy制作搜索引擎（一）/" class="article-date">
   <time datetime="2019-01-08T01:47:46.000Z" itemprop="datePublished">2019-01-08</time>
 </a>
     
@@ -83,7 +83,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Scrapy制作搜索引擎(一)
+      Scrapy制作搜索引擎（一）
     </h1>
   
 
@@ -91,15 +91,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><p>1.pycharm的安装 下载专业版（<a href="http://www.jetbrains.com/pycharm/）" target="_blank" rel="noopener">http://www.jetbrains.com/pycharm/）</a><br>2.安装mysql和navicat<br>3.安装python3（<strong>windows下需配置python路径以及pip路径</strong>）<br>4.安装虚拟环境<br>    <strong>安装virtualenv</strong><br>    <code>pip install virtualenv</code><br>    <strong>安装virtualenvwrapper</strong><br>    <code>pip install virtualenvwrapper-win</code><br>    <strong>修改虚拟环境地址</strong><br>    windows环境变量中加入WORKON_HOME 为自己创建的Envs文件夹地址<br>    <strong>新建虚拟环境</strong><br>    <code>mkvirtualenv --python=&quot;需要的python版本路径&quot; envName</code>(环境名)   (<strong>若使用自带版本，则不需要加python参数</strong>)<br>    <strong>查看虚拟环境</strong><br>    <code>workon</code><br>    <strong>进入虚拟环境</strong><br>    <code>workon envName</code>(环境名)<br>    <strong>退出虚拟环境</strong><br>    <code>deactivate</code></p>
-<h2 id="使用虚拟环境创建项目"><a href="#使用虚拟环境创建项目" class="headerlink" title="使用虚拟环境创建项目"></a>使用虚拟环境创建项目</h2><pre><code>打开pycharm 点击File-&gt;new Project-&gt;Pure Python
+        <h1 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h1><ol>
+<li>pycharm 的安装 下载专业版（<a href="http://www.jetbrains.com/pycharm/）" target="_blank" rel="noopener">http://www.jetbrains.com/pycharm/）</a> </li>
+<li>安装 mysql 和 navicat </li>
+<li>安装 python3（<strong>windows 下需配置 python 路径以及 pip 路径</strong>） </li>
+<li>安装虚拟环境<br><strong>安装 virtualenv</strong><br><code>pip install virtualenv</code><br><strong>安装 virtualenvwrapper</strong><br><code>pip install virtualenvwrapper-win</code><br><strong>修改虚拟环境地址</strong><br>windows 环境变量中加入 WORKON_HOME 为自己创建的 Envs 文件夹地址<br><strong>新建虚拟环境</strong><br><code>mkvirtualenv --python=&quot;需要的python版本路径&quot; envName</code>(环境名) (<strong>若使用自带版本，则不需要加 python 参数</strong>)<br><strong>查看虚拟环境</strong><br><code>workon</code><br><strong>进入虚拟环境</strong><br><code>workon envName</code>(环境名)<br><strong>退出虚拟环境</strong><br><code>deactivate</code></li>
+</ol>
+<h1 id="使用虚拟环境创建项目"><a href="#使用虚拟环境创建项目" class="headerlink" title="使用虚拟环境创建项目"></a>使用虚拟环境创建项目</h1><pre><code>打开pycharm 点击File-&gt;new Project-&gt;Pure Python
 选择 Existing interpreter 选择Envs地址下的需要使用的虚拟环境envName下的Scripts下的python.exe
 修改最上方location(项目地址)为创建项目的地址,点击创建（create）即可
 </code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/08/Scrapy制作搜索引擎(一)/" data-id="cjqn7kcdw0000mkbykl6hih69" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/08/Scrapy制作搜索引擎（一）/" data-id="cjqnf8zk100004kbykcsp01ch" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -108,6 +113,20 @@
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2019/01/08/Scrapy制作搜索引擎（二）/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Scrapy制作搜索引擎（二）
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
   
 </article>
 
@@ -161,7 +180,15 @@
       <ul>
         
           <li>
-            <a href="/2019/01/08/Scrapy制作搜索引擎(一)/">Scrapy制作搜索引擎(一)</a>
+            <a href="/2019/01/08/Scrapy制作搜索引擎（三）/">Scrapy制作搜索引擎（三）</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/08/Scrapy制作搜索引擎（二）/">Scrapy制作搜索引擎（二）</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/08/Scrapy制作搜索引擎（一）/">Scrapy制作搜索引擎（一）</a>
           </li>
         
       </ul>
