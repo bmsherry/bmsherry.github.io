@@ -66,6 +66,55 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Scrapy制作搜索引擎（四）" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/11/Scrapy制作搜索引擎（四）/" class="article-date">
+  <time datetime="2019-01-11T02:05:50.000Z" itemprop="datePublished">2019-01-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python/">python</a>►<a class="article-category-link" href="/categories/python/scrapy/">scrapy</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/11/Scrapy制作搜索引擎（四）/">Scrapy制作搜索引擎（四）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="创建-Scrapy-项目"><a href="#创建-Scrapy-项目" class="headerlink" title="创建 Scrapy 项目"></a>创建 Scrapy 项目</h2><p>创建虚拟环境，详见之前的文档。<br>workon 进入指定虚拟环境，执行以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">scrapy startproject Article</span><br><span class="line">cd Artcle</span><br><span class="line">scrapy genspider jobbole blog.jobbole.com //以伯乐在线为例</span><br></pre></td></tr></table></figure>
+<p>使用 pycharm 打开 scrapy,设置解释器 inter,此时会发现工程目录下会出现 jobbole.py 文件，内容如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import scrapy</span><br><span class="line"></span><br><span class="line">class JobboleSpider(scrapy.Spider):</span><br><span class="line">name = &apos;jobbole&apos;</span><br><span class="line">allowed_domains = [&apos;blog.jobbole.com&apos;]</span><br><span class="line">start_urls = [&apos;http://blog.jobbole.com/&apos;]</span><br><span class="line"></span><br><span class="line">def parse(self, response):</span><br><span class="line">    pass</span><br></pre></td></tr></table></figure>
+<p>为了方便调试,在根目录创建 main.py,调用 scrapy crawl name 的方法,对于 spider 进行 debugger<br>main.py 文件如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">from scrapy.cmdline import execute</span><br><span class="line"></span><br><span class="line">import sys</span><br><span class="line">import os</span><br><span class="line">// 获取文件地址---绝对路径转相对路径</span><br><span class="line">sys.path.append(os.path.dirname(os.path.abspath(__file__)))</span><br><span class="line">execute([&quot;scrapy&quot;, &quot;crawl&quot;, &quot;jobbole&quot;])</span><br></pre></td></tr></table></figure>
+<h2 id="使用-xPath-提取数据"><a href="#使用-xPath-提取数据" class="headerlink" title="使用 xPath 提取数据"></a>使用 xPath 提取数据</h2><p>XPath 即为 XML 路径语言（XML Path Language），它是一种用来确定 XML 文档中某部分位置的语言。xpath 包含标准函数库。xpath 是一个 W3C 标准</p>
+<h3 id="xPath-语法"><a href="#xPath-语法" class="headerlink" title="xPath 语法"></a>xPath 语法</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/01/11/Scrapy制作搜索引擎（四）/" data-id="cjqrf5urh0005l4byrhc31hnd" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Scrapy制作搜索引擎（三）" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/01/08/Scrapy制作搜索引擎（三）/" class="article-date">
@@ -103,7 +152,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/08/Scrapy制作搜索引擎（三）/" data-id="cjqnfwk4l000724bym9jrtw96" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/08/Scrapy制作搜索引擎（三）/" data-id="cjqrf5urf0004l4by3ij4kdjm" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -150,7 +199,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/08/Scrapy制作搜索引擎（二）/" data-id="cjqnfwk4n000824by8t8ecp3i" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/08/Scrapy制作搜索引擎（二）/" data-id="cjqrf5ur60001l4bye4jdhgzo" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -201,7 +250,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/08/Scrapy制作搜索引擎（一）/" data-id="cjqnfwk3w000024bys5iflr4n" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/08/Scrapy制作搜索引擎（一）/" data-id="cjqrf5uqy0000l4bybx0k60k3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -263,6 +312,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/01/11/Scrapy制作搜索引擎（四）/">Scrapy制作搜索引擎（四）</a>
+          </li>
         
           <li>
             <a href="/2019/01/08/Scrapy制作搜索引擎（三）/">Scrapy制作搜索引擎（三）</a>

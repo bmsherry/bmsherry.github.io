@@ -5,20 +5,20 @@
   
 
   
-  <title>Scrapy制作搜索引擎（三） | Bmsherry的博客</title>
+  <title>Scrapy制作搜索引擎（四） | Bmsherry的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="爬虫去重策略 将访问过的url保存到数据库中 将访问过的url保存在set中，只需要O(1)的代价就可以查询url url经过md5等方法哈希保存到set中 (scrapy使用) 用bitmap方法，将访问过的url通过hash函数映射到某一位 bloomfilter方法对bitmap进行改进，多重hash函数降低冲突">
+  <meta name="description" content="创建 Scrapy 项目创建虚拟环境，详见之前的文档。workon 进入指定虚拟环境，执行以下命令： 123scrapy startproject Articlecd Artclescrapy genspider jobbole blog.jobbole.com //以伯乐在线为例 使用 pycharm 打开 scrapy,设置解释器 inter,此时会发现工程目录下会出现 jobbole.py">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Scrapy制作搜索引擎（三）">
-<meta property="og:url" content="http://yoursite.com/2019/01/08/Scrapy制作搜索引擎（三）/index.html">
+<meta property="og:title" content="Scrapy制作搜索引擎（四）">
+<meta property="og:url" content="http://yoursite.com/2019/01/11/Scrapy制作搜索引擎（四）/index.html">
 <meta property="og:site_name" content="Bmsherry的博客">
-<meta property="og:description" content="爬虫去重策略 将访问过的url保存到数据库中 将访问过的url保存在set中，只需要O(1)的代价就可以查询url url经过md5等方法哈希保存到set中 (scrapy使用) 用bitmap方法，将访问过的url通过hash函数映射到某一位 bloomfilter方法对bitmap进行改进，多重hash函数降低冲突">
+<meta property="og:description" content="创建 Scrapy 项目创建虚拟环境，详见之前的文档。workon 进入指定虚拟环境，执行以下命令： 123scrapy startproject Articlecd Artclescrapy genspider jobbole blog.jobbole.com //以伯乐在线为例 使用 pycharm 打开 scrapy,设置解释器 inter,此时会发现工程目录下会出现 jobbole.py">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-08T07:05:53.170Z">
+<meta property="og:updated_time" content="2019-01-11T02:24:38.956Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Scrapy制作搜索引擎（三）">
-<meta name="twitter:description" content="爬虫去重策略 将访问过的url保存到数据库中 将访问过的url保存在set中，只需要O(1)的代价就可以查询url url经过md5等方法哈希保存到set中 (scrapy使用) 用bitmap方法，将访问过的url通过hash函数映射到某一位 bloomfilter方法对bitmap进行改进，多重hash函数降低冲突">
+<meta name="twitter:title" content="Scrapy制作搜索引擎（四）">
+<meta name="twitter:description" content="创建 Scrapy 项目创建虚拟环境，详见之前的文档。workon 进入指定虚拟环境，执行以下命令： 123scrapy startproject Articlecd Artclescrapy genspider jobbole blog.jobbole.com //以伯乐在线为例 使用 pycharm 打开 scrapy,设置解释器 inter,此时会发现工程目录下会出现 jobbole.py">
   
     <link rel="alternate" href="/atom.xml" title="Bmsherry的博客" type="application/atom+xml">
   
@@ -65,10 +65,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Scrapy制作搜索引擎（三）" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <section id="main"><article id="post-Scrapy制作搜索引擎（四）" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/01/08/Scrapy制作搜索引擎（三）/" class="article-date">
-  <time datetime="2019-01-08T06:28:11.000Z" itemprop="datePublished">2019-01-08</time>
+    <a href="/2019/01/11/Scrapy制作搜索引擎（四）/" class="article-date">
+  <time datetime="2019-01-11T02:05:50.000Z" itemprop="datePublished">2019-01-11</time>
 </a>
     
   <div class="article-category">
@@ -83,7 +83,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Scrapy制作搜索引擎（三）
+      Scrapy制作搜索引擎（四）
     </h1>
   
 
@@ -91,18 +91,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="爬虫去重策略"><a href="#爬虫去重策略" class="headerlink" title="爬虫去重策略"></a>爬虫去重策略</h1><ol>
-<li>将访问过的url保存到数据库中</li>
-<li>将访问过的url保存在set中，只需要<strong>O(1)</strong>的代价就可以查询url</li>
-<li>url经过md5等方法哈希保存到set中 (<strong>scrapy使用</strong>)</li>
-<li>用bitmap方法，将访问过的url通过hash函数映射到某一位</li>
-<li>bloomfilter方法对bitmap进行改进，多重hash函数降低冲突</li>
-</ol>
-
+        <h2 id="创建-Scrapy-项目"><a href="#创建-Scrapy-项目" class="headerlink" title="创建 Scrapy 项目"></a>创建 Scrapy 项目</h2><p>创建虚拟环境，详见之前的文档。<br>workon 进入指定虚拟环境，执行以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">scrapy startproject Article</span><br><span class="line">cd Artcle</span><br><span class="line">scrapy genspider jobbole blog.jobbole.com //以伯乐在线为例</span><br></pre></td></tr></table></figure>
+<p>使用 pycharm 打开 scrapy,设置解释器 inter,此时会发现工程目录下会出现 jobbole.py 文件，内容如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import scrapy</span><br><span class="line"></span><br><span class="line">class JobboleSpider(scrapy.Spider):</span><br><span class="line">name = &apos;jobbole&apos;</span><br><span class="line">allowed_domains = [&apos;blog.jobbole.com&apos;]</span><br><span class="line">start_urls = [&apos;http://blog.jobbole.com/&apos;]</span><br><span class="line"></span><br><span class="line">def parse(self, response):</span><br><span class="line">    pass</span><br></pre></td></tr></table></figure>
+<p>为了方便调试,在根目录创建 main.py,调用 scrapy crawl name 的方法,对于 spider 进行 debugger<br>main.py 文件如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">from scrapy.cmdline import execute</span><br><span class="line"></span><br><span class="line">import sys</span><br><span class="line">import os</span><br><span class="line">// 获取文件地址---绝对路径转相对路径</span><br><span class="line">sys.path.append(os.path.dirname(os.path.abspath(__file__)))</span><br><span class="line">execute([&quot;scrapy&quot;, &quot;crawl&quot;, &quot;jobbole&quot;])</span><br></pre></td></tr></table></figure>
+<h2 id="使用-xPath-提取数据"><a href="#使用-xPath-提取数据" class="headerlink" title="使用 xPath 提取数据"></a>使用 xPath 提取数据</h2><p>XPath 即为 XML 路径语言（XML Path Language），它是一种用来确定 XML 文档中某部分位置的语言。xpath 包含标准函数库。xpath 是一个 W3C 标准</p>
+<h3 id="xPath-语法"><a href="#xPath-语法" class="headerlink" title="xPath 语法"></a>xPath 语法</h3>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/08/Scrapy制作搜索引擎（三）/" data-id="cjqrf5urf0004l4by3ij4kdjm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/Scrapy制作搜索引擎（四）/" data-id="cjqrf5urh0005l4byrhc31hnd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -113,19 +113,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2019/01/11/Scrapy制作搜索引擎（四）/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Scrapy制作搜索引擎（四）
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/01/08/Scrapy制作搜索引擎（二）/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/01/08/Scrapy制作搜索引擎（三）/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Scrapy制作搜索引擎（二）</div>
+      <div class="article-nav-title">Scrapy制作搜索引擎（三）</div>
     </a>
   
 </nav>
